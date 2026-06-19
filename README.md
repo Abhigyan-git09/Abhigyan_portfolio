@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# Abhigyan Sinha - Professional Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+A high-performance, single-page application built to showcase software engineering projects, technical experience, and core competencies. The application serves as an interactive resume and direct contact portal.
 
-Currently, two official plugins are available:
+## Design and Theme
+The portfolio utilizes a highly customized "Bioluminescent Deep Ocean" design system. The user interface is anchored by deep, dark backgrounds representing the oceanic void, sharply contrasted with vibrant, glowing neon accents in teal, gold, violet, and pink. The visual architecture relies heavily on glassmorphism panels, layered depth gradients, and smooth, staggered entrance animations that trigger dynamically as the user scrolls.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Core Features
+- **Responsive Navigation**: A sticky, blur-backed navigation bar with smooth scrolling logic and an active section spy mechanism.
+- **Interactive Environment**: A custom Three.js scene rendering an interactive jellyfish model in the hero section, accompanied by dynamic particle overlays configured via tsParticles.
+- **Performance Optimized**: Critical above-the-fold content loads instantly. All below-the-fold components utilize React.lazy and Suspense for efficient code splitting. The production build is additionally compressed via gzip.
+- **Secure Contact Integration**: A fully functional contact form utilizing EmailJS, secured by environment variables, to deliver user inquiries directly to a private inbox without exposing API credentials.
+- **Fluid Animations**: Complex timeline sequencing, entrance delays, and physics-based reveals orchestrated through Framer Motion and GSAP.
 
-## React Compiler
+## Technical Stack
+- **Frontend Framework**: React 19, Vite, TypeScript
+- **Styling**: Tailwind CSS v4, Vanilla CSS
+- **Animation & 3D**: Framer Motion, GSAP, Three.js, React Three Fiber, tsParticles
+- **Form Management & Integration**: React Hook Form, EmailJS
+- **Iconography**: Lucide React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local Development Setup
 
-## Expanding the ESLint configuration
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Abhigyan-git09/Abhigyan_portfolio.git
+   cd Abhigyan_portfolio
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. **Configure Environment Variables**
+   Create a `.env.local` file in the root directory and provide your EmailJS credentials:
+   ```env
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Build for Production
+To generate an optimized, gzipped production build, run:
+```bash
+npm run build
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The output will be available in the `dist` directory.
