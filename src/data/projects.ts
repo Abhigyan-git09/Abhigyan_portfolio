@@ -37,5 +37,12 @@ export const projects: ProjectData[] = [
     accentColor: '#00b4d8',
     description: 'AI-driven greenwashing detection using Google Gemini multimodal AI for product image analysis, ESG scoring, and corporate network mapping.',
     tags: ['React', 'Node.js', 'Gemini API', 'WebSockets', 'OpenCorporates API']
+  },
+  {
+    title: 'Image Compressor',
+    url: 'https://abhigyan-git09.github.io/image-compressor/',
+    accentColor: '#10b981',
+    description: 'A client-side image compression tool leveraging Huffman coding for file size reduction, featuring real-time AI analysis and interactive visualisations of the encoding tree structure.',
+    tags: ['Vanilla JS', 'Canvas API', 'Huffman Coding', 'AI Analysis', 'Tree Visualization']
   }
 ];
