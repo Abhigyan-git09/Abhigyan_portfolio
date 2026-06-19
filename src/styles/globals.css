@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-void: var(--bg-void);
+  --color-bg-deep: var(--bg-deep);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-glass: var(--bg-glass);
+  
+  --color-biolum-primary: var(--biolum-primary);
+  --color-biolum-secondary: var(--biolum-secondary);
+  --color-biolum-gold: var(--biolum-gold);
+  --color-biolum-violet: var(--biolum-violet);
+  --color-biolum-pink: var(--biolum-pink);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-dim: var(--text-dim);
+  
+  --color-border-subtle: var(--border-subtle);
+  --color-border-active: var(--border-active);
+
+  --font-syne: 'Syne', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-void: #020810;
+    --bg-deep: #040f1e;
+    --bg-surface: #071428;
+    --bg-glass: rgba(7, 20, 40, 0.6);
+
+    --biolum-primary: #00ffd5;
+    --biolum-secondary: #00b4d8;
+    --biolum-gold: #ffd166;
+    --biolum-violet: #8b5cf6;
+    --biolum-pink: #f472b6;
+
+    --text-primary: #e8f4f8;
+    --text-secondary: #7fb3c8;
+    --text-dim: #3d6b80;
+
+    --border-subtle: rgba(0, 255, 213, 0.08);
+    --border-active: rgba(0, 255, 213, 0.3);
+    --glow-primary: 0 0 20px rgba(0, 255, 213, 0.4);
+    --glow-gold: 0 0 20px rgba(255, 209, 102, 0.4);
+    --glow-strong: 0 0 40px rgba(0, 255, 213, 0.6), 0 0 80px rgba(0, 255, 213, 0.2);
+  }
+
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: var(--font-inter);
+    /* For smooth scrolling to sections */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+}
