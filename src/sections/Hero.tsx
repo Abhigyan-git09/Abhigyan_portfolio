@@ -44,7 +44,7 @@ export function Hero() {
           
           <motion.h1 
             variants={itemVariants} 
-            className="text-[var(--biolum-gold)] font-syne font-extrabold text-5xl md:text-7xl mb-6 tracking-tight"
+            className="text-[var(--biolum-gold)] font-syne font-extrabold text-3xl sm:text-5xl md:text-[4.5rem] mb-6 tracking-tight leading-tight"
             style={{ textShadow: 'var(--glow-gold)' }}
           >
             Abhigyan Sinha

@@ -68,15 +68,15 @@ const achievementsData = [
 
 export function Achievements() {
   return (
-    <section id="achievements" className="py-[120px] px-6 max-w-4xl mx-auto">
+    <section id="achievements" className="py-16 md:py-[120px] px-6 max-w-4xl mx-auto">
       <SectionHeader label="// achievements.unlock" title="Milestones" />
 
-      <div className="mt-16 flex overflow-x-auto md:grid md:grid-cols-2 gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 pb-6">
         {achievementsData.map((achievement, index) => {
           const Icon = achievement.icon;
           const content = (
             <div
-              className="min-w-[280px] md:min-w-0 w-full flex-shrink-0 snap-center bg-[var(--bg-glass)] backdrop-blur-[12px] border border-[var(--border-subtle)] rounded-xl p-6 relative overflow-hidden transition-all hover:border-[var(--border-active)] hover:shadow-[var(--glow-primary)] group h-full"
+              className="w-full bg-[var(--bg-glass)] backdrop-blur-[12px] border border-[var(--border-subtle)] rounded-xl p-6 relative overflow-hidden transition-all hover:border-[var(--border-active)] hover:shadow-[var(--glow-primary)] group h-full"
             >
               <div
                 className="absolute left-0 top-0 bottom-0 w-1"

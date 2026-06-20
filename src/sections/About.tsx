@@ -2,31 +2,45 @@ import { ScrollReveal } from '../components/ui/ScrollReveal';
 
 export function About() {
   return (
-    <section id="about" className="py-[120px] px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-[80px]">
-      <ScrollReveal direction="right" className="w-full md:w-1/2 flex justify-center relative">
+    <section id="about" className="py-16 md:py-[120px] px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-[80px]">
+      <ScrollReveal direction="right" className="w-full md:w-1/2 flex flex-col items-center relative">
         {/* Specimen Display */}
-        <div className="relative flex items-center justify-center w-[310px] h-[310px]">
+        <div className="relative flex items-center justify-center w-[280px] h-[280px] md:w-[310px] md:h-[310px]">
           {/* Rotating dashed ring */}
           <div className="absolute inset-0 border-2 border-dashed border-[rgba(0,255,213,0.2)] rounded-full animate-[spin_20s_linear_infinite]" />
           
           {/* Outer circle */}
-          <div className="absolute w-[280px] h-[280px] border-2 border-[var(--border-active)] rounded-full shadow-[var(--glow-primary)] flex items-center justify-center overflow-hidden">
+          <div className="absolute w-[250px] h-[250px] md:w-[280px] md:h-[280px] border-2 border-[var(--border-active)] rounded-full shadow-[var(--glow-primary)] flex items-center justify-center overflow-hidden">
             <img src="/abhigyan_headshot.png" alt="Abhigyan Sinha" className="w-full h-full object-cover" />
           </div>
 
-          {/* Orbiting tags */}
-          {['AI/ML', 'Full-Stack', 'Researcher'].map((tag, i) => (
-            <div 
-              key={tag} 
-              className="absolute w-full h-full animate-[spin_15s_linear_infinite]"
-              style={{ animationDelay: `${i * -5}s` }}
-            >
+          {/* Orbiting tags - Desktop only */}
+          <div className="hidden md:block absolute inset-0">
+            {['AI/ML', 'Full-Stack', 'Researcher'].map((tag, i) => (
               <div 
-                className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--bg-glass)] backdrop-blur-[12px] border border-[var(--biolum-primary)] text-[var(--text-primary)] text-[0.7rem] px-3 py-1 rounded-lg uppercase tracking-wider whitespace-nowrap animate-[spin_15s_linear_infinite_reverse]"
+                key={tag} 
+                className="absolute w-full h-full animate-[spin_15s_linear_infinite]"
                 style={{ animationDelay: `${i * -5}s` }}
               >
-                {tag}
+                <div 
+                  className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--bg-glass)] backdrop-blur-[12px] border border-[var(--biolum-primary)] text-[var(--text-primary)] text-[0.7rem] px-3 py-1 rounded-lg uppercase tracking-wider whitespace-nowrap animate-[spin_15s_linear_infinite_reverse]"
+                  style={{ animationDelay: `${i * -5}s` }}
+                >
+                  {tag}
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Static tags - Mobile only */}
+        <div className="flex md:hidden flex-wrap justify-center gap-3 mt-8">
+          {['AI/ML', 'Full-Stack', 'Researcher'].map(tag => (
+            <div 
+              key={tag} 
+              className="bg-[var(--bg-glass)] backdrop-blur-[12px] border border-[var(--biolum-primary)] text-[var(--text-primary)] text-[0.7rem] px-3 py-1 rounded-lg uppercase tracking-wider"
+            >
+              {tag}
             </div>
           ))}
         </div>

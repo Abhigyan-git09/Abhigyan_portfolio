@@ -75,12 +75,15 @@ function Jellyfish({ position, phase }: { position: [number, number, number], ph
 export function JellyfishScene() {
   return (
     <div className="absolute inset-0 z-[1] pointer-events-none">
-      <Canvas frameloop="always" camera={{ position: [0, 0, 8], fov: 60 }}>
-        <ambientLight color="#001a2e" intensity={0.5} />
-        <Jellyfish position={[-4, 1, -2]} phase={0} />
-        <Jellyfish position={[3, 0, -4]} phase={2} />
-        <Jellyfish position={[0, -2, -1]} phase={4} />
-      </Canvas>
+      <div className="hidden md:block w-full h-full">
+        <Canvas frameloop="always" camera={{ position: [0, 0, 8], fov: 60 }}>
+          <ambientLight color="#001a2e" intensity={0.5} />
+          <Jellyfish position={[-4, 1, -2]} phase={0} />
+          <Jellyfish position={[3, 0, -4]} phase={2} />
+          <Jellyfish position={[0, -2, -1]} phase={4} />
+        </Canvas>
+      </div>
+      <div className="md:hidden w-full h-full bg-[radial-gradient(circle_at_center,var(--color-biolum-primary)_0%,transparent_60%)] animate-pulse-slow"></div>
     </div>
   );
 }

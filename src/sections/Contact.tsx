@@ -52,7 +52,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[var(--bg-deep)] py-[120px] px-6 mt-12 relative z-20">
+    <section id="contact" className="bg-[var(--bg-deep)] py-16 md:py-[120px] px-6 mt-12 relative z-20">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row gap-16 md:gap-[80px]">
           

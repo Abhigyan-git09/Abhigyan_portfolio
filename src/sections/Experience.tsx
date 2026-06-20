@@ -31,7 +31,7 @@ export function Experience() {
   }, []);
 
   return (
-    <section id="experience" className="py-[120px] px-6 max-w-4xl mx-auto">
+    <section id="experience" className="py-16 md:py-[120px] px-6 max-w-4xl mx-auto">
       <SectionHeader label="// experience.log" title="Depths Explored" />
 
       <div className="relative mt-16 pl-6 md:pl-0">

@@ -34,7 +34,7 @@ export function Skills() {
   const [focusedId, setFocusedId] = useState<string | null>(null);
 
   return (
-    <section id="skills" className="py-[120px] px-6 max-w-5xl mx-auto">
+    <section id="skills" className="py-16 md:py-[120px] px-6 max-w-5xl mx-auto">
       <SectionHeader label="// skills.inventory" title="Capabilities & Tools" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">

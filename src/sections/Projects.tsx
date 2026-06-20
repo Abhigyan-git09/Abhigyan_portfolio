@@ -5,7 +5,7 @@ import { projects } from '../data/projects';
 
 export function Projects() {
   return (
-    <section id="projects" className="py-[120px] px-6 max-w-7xl mx-auto">
+    <section id="projects" className="py-16 md:py-[120px] px-6 max-w-7xl mx-auto">
       <SectionHeader label="// projects.explore" title="Things I've Built" />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
